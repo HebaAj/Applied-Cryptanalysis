@@ -166,15 +166,6 @@ print("FLAG:", bytes(known).decode())
 
 > `encrypt_blocks` chunks at `MAX_BLOCKS_PER_REQUEST` to stay under URL length limits. With 256 candidates (16 bytes each) that's ≥2 chunks worst case, but frequency-ordering + early-exit usually resolves within the first chunk.
 
----
-
-## Quick Reference
-
-| Approach | Setup requests | Requests per byte (typical) |
-|---|---|---|
-| Naive, 1 guess/request, all 256 bytes | 0 | ~256 |
-| Old note: per-byte reference + batched printable guesses | 0 | ~2 |
-| This version: precomputed reference table + batched full-byte guesses | 16 (one-time) | ~1 |
 
 ---
 
